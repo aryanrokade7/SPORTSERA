@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swimming Lessons</title>
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            margin: 0;
+            background: url('swimming-background.jpg') no-repeat center center fixed; /* Add your background image */
+            background-size: cover; /* Cover the entire viewport */
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .lessons {
+            width: 30%;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            border-right: 1px solid white;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+            overflow-y: auto; /* Allow scrolling if content exceeds the container */
+        }
+        .lessons h2 {
+            margin-top: 0;
+            text-align: center; /* Center align the heading */
+            font-size: 1.5rem;
+        }
+        .lesson {
+            padding: 15px;
+            border: 1px solid rgb(255, 255, 255);
+            margin-bottom: 10px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+        }
+        .lesson:hover {
+            background-color: rgba(255, 255, 255, 0.2); /* Change background on hover */
+            transform: translateY(-3px); /* Lift effect */
+        }
+        .video-container {
+            width: 70%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+            position: relative; /* For better positioning of elements */
+        }
+        .back-button {
+            align-self: flex-start;
+            margin-bottom: 20px;
+            cursor: pointer;
+            padding: 10px 15px;
+            background: linear-gradient(45deg, #422495, #fc0000); /* Gradient background */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background 0.3s ease; /* Smooth background transition */
+        }
+        .back-button:hover {
+            background: linear-gradient(45deg, #fc0000, #422495); /* Inverse gradient on hover */
+            transform: translateY(-6px);
+        }
+        .video {
+            width: 100%;
+            height: 80%;
+            background-color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px; /* Rounded corners for video container */
+            overflow: hidden; /* Prevent overflow */
+        }
+        video {
+            width: 100%;
+            height: 100%;
+            border-radius: 8px; /* Rounded corners for video */
+        }
+        /* To ensure no overflow at the bottom */
+        .video-container {
+            flex-grow: 1; /* Allow video container to grow and fill space */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="lessons">
+        <div class="back-button" onclick="goBack()">← Back</div>
+        <h2>Lessons</h2>
+        <div class="lesson" onclick="playVideo('Basic of swimming 1.mp4')">01 Basics of swimming</div>
+        <div class="lesson" onclick="playVideo('Basic of swimming 2.mp4')">02 Basics of swimming</div>
+        <div class="lesson" onclick="playVideo('Basic of swimming 3.mp4')">03 Basics of swimming</div>
+        <div class="lesson" onclick="playVideo('Basic of swimming 4.mp4')">04 Basics of swimming</div>
+        <div class="lesson" onclick="playVideo('Basic of swimming 5.mp4')">05 Basics of swimming</div>
+        <div class="lesson" onclick="playVideo('Basic of swimming 6.mp4')">06 Basics of swimming</div>
+        <div class="lesson" onclick="playVideo('Basic of swimming 7.mp4')">07 Basics of swimming</div>
+        <div class="lesson" onclick="playVideo('Basic of swimming 8.mp4')">08 Basics of swimming</div>
+        <div class="lesson" onclick="playVideo('Basic of swimming 9.mp4')">09 Basics of swimming</div>
+        <div class="lesson" onclick="playVideo('Basic of swimming 10.mp4')">10 Basics of swimming</div>
+    </div>
+    <div class="video-container">
+        <div class="video" id="video">
+            <video id="videoPlayer" controls>
+                <source src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <script>
+        function playVideo(videoFile) {
+            var videoPlayer = document.getElementById('videoPlayer');
+            videoPlayer.src = videoFile;
+            videoPlayer.play();
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+/* General styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1C1C1E, #2A2A2D); /* Dark gradient background */
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Header Styling */
+header {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #FF6F61;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #FFB74D;
+}
+
+/* Hero Section Styling */
+#hero {
+    text-align: center;
+    padding: 150px 20px;
+    background: rgba(28, 28, 30, 0.85);
+    border-radius: 15px;
+    margin: 50px auto;
+    max-width: 900px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(20px);
+}
+
+#hero h1 {
+    font-size: 4rem;
+    color: #FFB74D; /* Vibrant header color */
+    text-shadow: 2px 2px 15px rgba(255, 183, 77, 0.5);
+    margin-bottom: 20px;
+}
+
+#hero p {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    color: #ddd; /* Slightly lighter text */
+}
+
+#hero button {
+    background: #FFB74D; /* Highlighted button */
+    color: #1C1C1E;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.3rem;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 3px 3px 15px rgba(255, 183, 77, 0.5);
+    transition: background 0.3s, transform 0.2s;
+}
+
+#hero button:hover {
+    background: #FF6F61;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(255, 111, 97, 0.7);
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(28, 28, 30, 0.85);
+    color: #fff;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    color: #FFB74D; /* Accent footer text */
+}

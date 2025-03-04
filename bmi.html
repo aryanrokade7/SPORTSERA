@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            width: 350px;
+            max-width: 90%;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            font-weight: 700;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        input, select {
+            width: calc(100% - 24px);
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background: #fff;
+            color: #333;
+            font-size: 1em;
+        }
+
+        button {
+            padding: 14px 28px;
+            border: none;
+            border-radius: 8px;
+            background: #2575fc;
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #6a11cb;
+            transform: scale(1.05);
+        }
+
+        #result {
+            margin-top: 25px;
+            font-size: 1.3em;
+            background: rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .diet-plan {
+            display: none;
+            margin-top: 20px;
+            font-size: 1em;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            text-align: left;
+        }
+
+        .diet-plan h2 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .diet-plan ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .diet-plan li {
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                width: 90%;
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            button {
+                padding: 12px 24px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>BMI Calculator</h1>
+        <div class="input-group">
+            <label for="age">Age:</label>
+            <input type="number" id="age" placeholder="Enter your age">
+        </div>
+        <div class="input-group">
+            <label for="gender">Gender:</label>
+            <select id="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <label for="height">Height (cm):</label>
+            <input type="number" id="height" placeholder="Enter your height">
+        </div>
+        <div class="input-group">
+            <label for="weight">Weight (kg):</label>
+            <input type="number" id="weight" placeholder="Enter your weight">
+        </div>
+        <button onclick="calculateBMI()">Calculate BMI</button>
+        <div id="result"></div>
+        <div id="diet-plan" class="diet-plan"></div>
+    </div>
+    <script>
+        function calculateBMI() {
+            const age = document.getElementById('age').value;
+            const gender = document.getElementById('gender').value;
+            const height = document.getElementById('height').value;
+            const weight = document.getElementById('weight').value;
+
+            if (age === '' || height === '' || weight === '') {
+                alert('Please enter all the required fields');
+                return;
+            }
+
+            const heightInMeters = height / 100;
+            const bmi = (weight / (heightInMeters * heightInMeters)).toFixed(2);
+
+            let resultText = `Your BMI is ${bmi}. `;
+            let dietPlan = '';
+
+            if (bmi < 18.5) {
+                resultText += 'You are underweight.';
+                dietPlan = `
+                    <h2>Diet Plan for Underweight</h2>
+                    <ul>
+                        <li>Breakfast: Whole grain toast with avocado and scrambled tofu.</li>
+                        <li>Snacks: Nuts and seeds (almonds, walnuts, chia seeds).</li>
+                        <li>Lunch: Quinoa salad with chickpeas, mixed greens, cherry tomatoes, and olive oil dressing.</li>
+                        <li>Dinner: Grilled tempeh with sweet potatoes and steamed broccoli.</li>
+                        <li>Before Bed: Cottage cheese with sliced fruit.</li>
+                    </ul>
+                `;
+            } else if (bmi < 24.9) {
+                resultText += 'You have a normal weight.';
+                dietPlan = `
+                    <h2>Diet Plan for Normal Weight</h2>
+                    <ul>
+                        <li>Breakfast: Oatmeal with plant-based milk, topped with nuts, seeds, and fresh fruit.</li>
+                        <li>Snacks: Trail mix with dried fruits and nuts.</li>
+                        <li>Lunch: Chickpea salad sandwich on whole grain bread with lettuce, tomato, and avocado.</li>
+                        <li>Dinner: Tofu stir-fry with mixed vegetables and quinoa.</li>
+                        <li>Before Bed: Greek yogurt with a handful of berries.</li>
+                    </ul>
+                `;
+            } else if (bmi < 29.9) {
+                resultText += 'You are overweight.';
+                dietPlan = `
+                    <h2>Diet Plan for Overweight</h2>
+                    <ul>
+                        <li>Breakfast: Smoothie with protein powder, spinach, berries, and almond milk.</li>
+                        <li>Snacks: Carrot sticks with hummus.</li>
+                        <li>Lunch: Grilled tofu salad with mixed greens, cherry tomatoes, cucumbers, and olive oil dressing.</li>
+                        <li>Dinner: Baked tempeh with quinoa and steamed asparagus.</li>
+                        <li>Before Bed: Protein shake with water or almond milk.</li>
+                    </ul>
+                `;
+            } else {
+                resultText += 'You are obese.';
+                dietPlan = `
+                    <h2>Diet Plan for Obese</h2>
+                    <ul>
+                        <li>Breakfast: Greek yogurt parfait with berries, nuts, and a drizzle of honey.</li>
+                        <li>Snacks: Sliced bell peppers with guacamole.</li>
+                        <li>Lunch: Grilled tofu with a side of quinoa and mixed vegetables.</li>
+                        <li>Dinner: Baked tempeh with a side of sweet potato and green beans.</li>
+                        <li>Before Bed: Cottage cheese with a handful of nuts.</li>
+                    </ul>
+                `;
+            }
+
+            document.getElementById('result').innerText = resultText;
+            document.getElementById('diet-plan').innerHTML = dietPlan;
+            document.getElementById('diet-plan').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

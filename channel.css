@@ -1,0 +1,154 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff; /* Light Alice Blue background for contrast */
+    color: #333;
+    line-height: 1.6; /* Improved line spacing for readability */
+}
+
+header {
+    background-color: #007BFF; /* Bright blue background */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+#channel-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#channel-profile-picture {
+    width: 80px; /* Profile picture size */
+    height: 80px;
+    border-radius: 50%; /* Circular profile picture */
+    margin-right: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+#channel-name {
+    font-size: 2.5rem; /* Increased size for better visibility */
+    color: white; /* White text for contrast */
+    margin: 0; /* Remove default margin */
+}
+
+#main-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 20px;
+    background-color: white; /* Main content background */
+    border-radius: 10px; /* More pronounced rounded corners */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+#channel-content {
+    flex: 3; /* Takes up 3 parts of the flex container */
+    padding: 10px;
+    margin-right: 20px;
+}
+
+#channel-content h3 {
+    margin-top: 0;
+    font-size: 1.8rem; /* Slightly larger font for section heading */
+    color: #007BFF; /* Heading color to match theme */
+}
+
+.post {
+    background-color: #e7f3ff; /* Light blue for posts */
+    border: 1px solid #007BFF; /* Border color */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.post:hover {
+    transform: translateY(-3px); /* Lift effect on hover */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Increased shadow on hover */
+}
+
+#channel-list {
+    flex: 1; /* Takes up 1 part of the flex container */
+    padding: 10px;
+}
+
+#channel-list h2 {
+    margin-top: 0;
+    font-size: 1.8rem; /* Consistent heading size */
+    color: #007BFF; /* Heading color to match theme */
+}
+
+#channel-list-ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;
+}
+
+#channel-list-ul li {
+    background: #f4f4f4; /* Light gray background */
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s, transform 0.2s;
+}
+
+#channel-list-ul li:hover {
+    background: #e0e0e0; /* Darker shade on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+footer {
+    background-color: #333; /* Dark footer */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+}
+
+#messaging-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#message-input {
+    width: 300px; /* Width for input */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s, box-shadow 0.2s;
+}
+
+#message-input:focus {
+    border-color: #007BFF; /* Highlight border on focus */
+    box-shadow: 0 2px 10px rgba(0, 123, 255, 0.4); /* Shadow on focus */
+    outline: none; /* Remove default outline */
+}
+
+#send-message-btn {
+    padding: 10px 15px;
+    background-color: #007BFF; /* Button color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+}
+
+#send-message-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+}
+
+#send-message-btn:active {
+    transform: translateY(0); /* Reset lift effect on click */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Reset shadow on click */
+}

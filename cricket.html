@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Techniques</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #f7f7f7, #fff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            color: #fff;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        header h1 {
+            margin-bottom: 20px;
+        }
+
+        .content button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .content button:hover {
+            background-color: #3e8e41;
+            transform: translateY(-2px);
+        }
+
+        .info {
+            margin-top: 20px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Learn Cricket Techniques</h1>
+        </header>
+        <div class="content">
+            <button id="learnBatting">Learn Batting</button>
+            <button id="learnBowling">Learn Bowling</button>
+        </div>
+        <div id="info" class="info"></div>
+    </div>
+    <script>
+        document.getElementById('learnBatting').addEventListener('click', function() {
+            document.getElementById('info').innerHTML = `
+                <h2>Batting Techniques</h2>
+                <h3>Front Foot Batting</h3>
+                <p>Front foot batting involves stepping forward towards the ball to play shots, typically used for deliveries pitched up or on a good length.</p>
+                <ul>
+                    <li><strong>Cover Drive:</strong> Step forward with the front foot towards the pitch of the ball, keep your head still, and drive the ball through the covers with a straight bat.</li>
+                    <li><strong>Straight Drive:</strong> Similar to the cover drive, but the ball is driven straight down the ground.</li>
+                    <li><strong>On Drive:</strong> Step forward and drive the ball towards mid-on or mid-wicket.</li>
+                </ul>
+                <h3>Back Foot Batting</h3>
+                <p>Back foot batting involves moving back and across to play shots, typically used for short-pitched deliveries.</p>
+                <ul>
+                    <li><strong>Back Foot Punch:</strong> Move back and across, and punch the ball through the off-side with a straight bat.</li>
+                    <li><strong>Pull Shot:</strong> Move back and across, and pull the ball through the leg side.</li>
+                    <li><strong>Cut Shot:</strong> Move back and across, and cut the ball through the off-side.</li>
+                </ul>
+                <h3>Front Foot Press</h3>
+                <p>The front foot press is a technique used to get into a good position to play both front foot and back foot shots.</p>
+                <ul>
+                    <li><strong>Initial Movement:</strong> Take a small step forward with your front foot as the bowler delivers the ball.</li>
+                    <li><strong>Read the Length:</strong> If the ball is pitched up, continue with the front foot shot. If it's short, quickly transfer your weight back to play a back foot shot.</li>
+                    <li><strong>Balance:</strong> Maintain a balanced stance to adjust quickly to the ball's length.</li>
+                </ul>
+            `;
+        });
+
+        document.getElementById('learnBowling').addEventListener('click', function() {
+            document.getElementById('info').innerHTML = `
+                <h2>Bowling Techniques</h2>
+                <h3>Off-Spin</h3>
+                <p>Off-spin bowlers use their fingers to spin the ball from a right-handed batsman's off side to the leg side.</p>
+                <h3>Leg-Spin</h3>
+                <p>Leg-spin bowlers use their wrists to spin the ball from a right-handed batsman's leg side to the off side.</p>
+                <h3>Googly (Wrong'un)</h3>
+                <p>A variation of the leg-spin, the googly spins in the opposite direction to a standard leg-break.</p>
+                <h3>Doosra</h3>
+                <p>A variation of the off-spin, the doosra spins in the opposite direction to a standard off-break.</p>
+                <h3>Top-Spinner</h3>
+                <p>A delivery that spins forward, causing the ball to dip and bounce higher.</p>
+                <h3>Flipper</h3>
+                <p>A back-spin delivery that skids on after pitching.</p>
+                <h3>Carrom Ball</h3>
+                <p>A finger-flicked delivery that can spin either way.</p>
+            `;
+        });
+    </script>
+</body>
+</html>

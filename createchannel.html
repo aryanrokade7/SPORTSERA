@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Channel</title>
+    <link rel="stylesheet" href="createchannel.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Channel Creation Section -->
+    <section id="create-channel">
+        <h2>Create Your Channel</h2>
+        <div class="form-container">
+            <form id="channel-form" onsubmit="handleSubmit(event)">
+                <div id="profile-picture-container">
+                    <img id="profile-picture" src="default-profile-picture.jpg" alt="Profile Picture">
+                    <input type="file" id="profile-picture-input" accept="image/*" onchange="previewImage(event)">
+                    <button type="button" id="capture-picture-btn" onclick="capturePicture()">Capture Picture</button>
+                </div>
+                <label for="channel-name">Channel Name:</label>
+                <input type="text" id="channel-name" name="channel-name" placeholder="Enter your channel name" required>
+                <label for="channel-description">Channel Description:</label>
+                <textarea id="channel-description" name="channel-description" placeholder="Tell us about your channel..." required></textarea>
+                <button type="submit" id="create-channel-btn" onclick=document.location='channel.html'>Create Channel</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="createchannel.js"></script>
+</body>
+</html>
+

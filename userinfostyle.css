@@ -1,0 +1,112 @@
+{
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #FFABAB, #FFC3A0, #FF677D);
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.form-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    width: 400px;
+    text-align: center;
+}
+
+h2 {
+    color: #1976d2;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    transition: border-color 0.3s, box-shadow 0.2s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 16px; /* Increase font size */
+    background-color: #fff; /* White background for inputs */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+select:focus {
+    border-color: #1976d2;
+    box-shadow: 0 2px 10px rgba(25, 118, 210, 0.4);
+    outline: none;
+}
+
+.get-started-button {
+    margin-top: 20px;
+}
+
+button {
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 15px rgba(25, 118, 210, 0.4);
+    width: 100%;
+}
+
+button:hover {
+    background-color: #1565c0;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(25, 118, 210, 0.6);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(25, 118, 210, 0.4);
+}
+
+/* Styles for select elements */
+select {
+    appearance: none; /* Remove default dropdown arrow */
+    background: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%231976d2"%3E%3Cpath d="M7 10l5 5 5-5z"/%3E%3C/svg%3E') no-repeat right 10px center; /* Custom dropdown arrow */
+    background-size: 12px; /* Size of the arrow */
+    padding-right: 40px; /* Space for the arrow */
+}
+
+select:focus {
+    background
+

@@ -1,0 +1,120 @@
+/* General styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Ensure body and html take up the full viewport height */
+    font-family: Arial, sans-serif;
+    color: rgb(255, 255, 255); /* Ensure text remains visible on the background */
+    box-sizing: border-box; /* Ensures padding and borders are included in element's total width/height */
+    overflow: hidden; /* Prevent overflow */
+}
+
+/* Background image with black overlay */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('traningpagebanner.png'); /* Use the banner as the background */
+    background-size: cover; /* Ensure the background covers the whole page */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    z-index: -1; /* Send the background to the back */
+}
+
+/* Black overlay */
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with 50% transparency */
+    z-index: -1; /* Send the overlay behind the content */
+}
+
+/* Header styling */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.2); /* Add transparency to make text more readable */
+    position: relative; /* Position relative to keep it above the overlay */
+    z-index: 1; /* Keep the header above the background and overlay */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+/* Logo styling */
+.logo {
+    position: absolute; /* Position it absolutely within the header */
+    top: 5px; /* Adjust as needed for spacing */
+    left: 30px; /* Adjust as needed for spacing */
+    width: 75px; /* Set width for the logo */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 2; /* Ensure it appears above the background */
+}
+
+/* Remove banner image element as it's now set as background */
+.banner {
+    display: none;
+}
+
+/* Button container */
+.button-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-wrap: wrap;
+    padding: 20px;
+    margin: 0; /* Remove margin to avoid extra space */
+    flex-grow: 1; /* Allow it to grow and fill available space */
+    position: relative; /* Position relative to keep it above the overlay */
+    z-index: 1; /* Keep the button container above the background and overlay */
+}
+
+/* Sport buttons */
+.sport-button {
+    background-color: rgb(40, 47, 48); /* Button background color */
+    color: white; /* Button text color */
+    border: 2px solid white; /* Button border color */
+    border-radius: 10px;
+    padding: 10px; /* Reduced padding for a more compact button */
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-align: center;
+    width: 150px; /* Adjusted width */
+    height: 150px; /* Set a fixed height for a more square shape */
+    margin: 50px; /* Increased margin for more space between buttons */
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease, transform 0.3s ease; /* Added transition for transform */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+}
+
+.sport-button img {
+    width: 50px;
+    height: 50px; /* Set a consistent size for the images */
+    object-fit: contain; /* Prevents the image from stretching */
+    margin-bottom: 10px; /* Space between image and text */
+}
+
+.sport-button:hover {
+    background-color: rgb(32, 31, 31); /* Change background color on hover */
+    color: rgb(255, 255, 255); /* Keep text color white on hover */
+    border: 2px solid rgb(255, 0, 0); /* Change border color on hover */
+    transform: scale(1.5); /* Scale the button up by 10% */
+}
+
+/* Ensure the container fills the remaining space to avoid white space at the bottom */
+main {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Set height to 100% to fill the viewport */
+}
